@@ -1,16 +1,16 @@
 Reffinder::Application.routes.draw do
   get "main/index"
-  get "main/site"
   get "main/referrer"
   get "main/category"
   get "main/share"
+  get "site/:site" => "main#site", as: :site, :constraints => { :site => /.*/ }
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   root 'main#index'
 
-  resources :referrals do
+  resources :main do
     collection { post :import }
   end
 

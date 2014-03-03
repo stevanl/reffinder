@@ -43,3 +43,17 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+
+gem 'haml'
+gem 'bootstrap-sass', '~> 3.1.0'
+
+group :development do
+  gem 'awesome_print'
+  gem 'better_errors'
+end
+
+gem 'roo'
+gem 'kaminari'
+gem 'sorted', '0.4.3'
+gem "ransack", github: "ernie/ransack", branch: "rails-4"

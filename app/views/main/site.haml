@@ -1,0 +1,17 @@
+%h1= params[:site]
+%table.table
+  %tr
+    %th Site
+    %th= sort_link(@search, :referrer, "Referrer")
+    %th= sort_link(@search, :category, "Category")
+    %th= sort_link(@search, :global_rank, "Global Rank")
+    %th= sort_link(@search, :share, "Share")
+    %th= sort_link(@search, :change, "% Change")
+  - for referral in @referrals
+    %tr
+      %td= referral.site
+      %td= referral.referrer
+      %td= referral.category
+      %td= referral.global_rank
+      %td= referral.share
+      %td= referral.change
